@@ -56,8 +56,10 @@
 		6452C9CC260BD598008530D8 /* Challenge about film */ = {
 			isa = PBXGroup;
 			children = (
+				6452C9E4260BFB24008530D8 /* Model */,
+				6452C9E3260BFB13008530D8 /* View */,
+				6452C9E2260BFAEE008530D8 /* ViewModel */,
 				6452C9CD260BD598008530D8 /* Challenge_about_filmApp.swift */,
-				6452C9CF260BD598008530D8 /* ContentView.swift */,
 				6452C9D1260BD599008530D8 /* Assets.xcassets */,
 				6452C9D6260BD599008530D8 /* Persistence.swift */,
 				6452C9DB260BD599008530D8 /* Info.plist */,
@@ -73,6 +75,28 @@
 				6452C9D4260BD599008530D8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6452C9E2260BFAEE008530D8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6452C9E3260BFB13008530D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6452C9CF260BD598008530D8 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6452C9E4260BFB24008530D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
