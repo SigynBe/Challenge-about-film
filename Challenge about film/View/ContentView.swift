@@ -11,9 +11,13 @@ import CoreData
 struct ContentView: View {
     
     var body: some View {
-        VStack{
-            Image("image").resizable().frame(height: 485).ignoresSafeArea().position(x: 160,y: 220)
+        ZStack{
+            Color(.black).ignoresSafeArea()
+            VStack{
+                Image("image").resizable().frame(height: 485).ignoresSafeArea().position(x: 160,y: 220)
+            }
         }
+        
     }
 }
 

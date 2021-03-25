@@ -12,10 +12,11 @@ struct MovieDetails: View {
     
     var body: some View {
         ZStack{
+            Color(.black)
             VStack{
                 HStack{
                     Spacer().frame(width: 20)
-                    Text("The Very Best Of \n Johnny Depp").bold()
+                    Text("The Very Best Of \n Johnny Depp").bold().foregroundColor(.white)
                     
                     Spacer()
                     
@@ -24,7 +25,7 @@ struct MovieDetails: View {
                             isPressed = true
                             print("Edit button was tapped")
                         }){
-                            Image(systemName: "heart").resizable().foregroundColor(.black).frame(width: 30, height: 30, alignment: .center)
+                            Image(systemName: "heart").resizable().foregroundColor(.white).frame(width: 30, height: 30, alignment: .center)
                             Spacer().frame(width: 20)
                         }
                     }else{
@@ -32,7 +33,7 @@ struct MovieDetails: View {
                             isPressed = false
                             print("Edit button was tapped")
                         }){
-                            Image(systemName: "heart.fill").resizable().foregroundColor(.black).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            Image(systemName: "heart.fill").resizable().foregroundColor(.white).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             Spacer().frame(width: 20)
                         }
                         
