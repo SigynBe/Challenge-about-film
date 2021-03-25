@@ -13,6 +13,7 @@ struct MovieDetails: View {
     var body: some View {
         ZStack{
             Color(.black)
+                .ignoresSafeArea()
             VStack{
                 HStack{
                     Spacer().frame(width: 20)
@@ -33,7 +34,8 @@ struct MovieDetails: View {
                             isPressed = false
                             print("Edit button was tapped")
                         }){
-                            Image(systemName: "heart.fill").resizable().foregroundColor(.white).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            Image(systemName: "heart.fill").resizable().foregroundColor(.white).frame(width: 30, height: 30, alignment: .center)
+                            
                             Spacer().frame(width: 20)
                         }
                         
@@ -41,6 +43,31 @@ struct MovieDetails: View {
                     }
                     
                 }
+            
+                Spacer()
+                    .frame(width: 20, height: 20)
+                
+                HStack{
+                    Spacer().frame(width: 20)
+                    Image(systemName: "heart.fill").foregroundColor(.white)
+                    
+                    Spacer().frame(width: 5)
+                    
+                    Text("1.2K Likes").foregroundColor(.white)
+                    
+                    Spacer().frame(width: 23)
+                    
+                    Image(systemName: "video.fill").foregroundColor(.white)
+                    
+                    Spacer().frame(width: 5)
+                    
+                    Text("3333K views").foregroundColor(.white)
+                    
+                    Spacer()
+                    
+                }
+                
+                
             }
         }
         
