@@ -11,24 +11,38 @@ struct MovieDetails: View {
     @State var isPressed = false
     
     var body: some View {
-        VStack{
-            HStack{
-                Spacer().frame(width: 20)
-                Text("The Very Best Of \n Johnny Depp").bold()
-                
-                Spacer()
-                
-                Button(action: {
-                    print("Edit button was tapped")
-                }){
-                    Image(systemName: "heart").resizable().frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        ZStack{
+            VStack{
+                HStack{
+                    Spacer().frame(width: 20)
+                    Text("The Very Best Of \n Johnny Depp").bold()
+                    
+                    Spacer()
+                    
+                    if isPressed == false{
+                        Button(action: {
+                            isPressed = true
+                            print("Edit button was tapped")
+                        }){
+                            Image(systemName: "heart").resizable().foregroundColor(.black).frame(width: 30, height: 30, alignment: .center)
+                            Spacer().frame(width: 20)
+                        }
+                    }else{
+                        Button(action: {
+                            isPressed = false
+                            print("Edit button was tapped")
+                        }){
+                            Image(systemName: "heart.fill").resizable().foregroundColor(.black).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            Spacer().frame(width: 20)
+                        }
+                        
+                        
+                    }
+                    
                 }
-                
-                
-                Spacer().frame(width: 20)
             }
-            
         }
+        
     }
 }
 
