@@ -14,6 +14,7 @@
 		6452C9D7260BD599008530D8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6452C9D6260BD599008530D8 /* Persistence.swift */; };
 		6452C9DA260BD599008530D8 /* Challenge_about_film.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6452C9D8260BD599008530D8 /* Challenge_about_film.xcdatamodeld */; };
 		6452C9E7260C12B1008530D8 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6452C9E6260C12B1008530D8 /* MovieDetails.swift */; };
+		6485197B260D58020019341C /* RowContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6485197A260D58020019341C /* RowContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6452C9D9260BD599008530D8 /* Challenge_about_film.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Challenge_about_film.xcdatamodel; sourceTree = "<group>"; };
 		6452C9DB260BD599008530D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6452C9E6260C12B1008530D8 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		6485197A260D58020019341C /* RowContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				6452C9CF260BD598008530D8 /* ContentView.swift */,
 				6452C9E6260C12B1008530D8 /* MovieDetails.swift */,
+				6485197A260D58020019341C /* RowContent.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			files = (
 				6452C9D7260BD599008530D8 /* Persistence.swift in Sources */,
 				6452C9D0260BD598008530D8 /* ContentView.swift in Sources */,
+				6485197B260D58020019341C /* RowContent.swift in Sources */,
 				6452C9CE260BD598008530D8 /* Challenge_about_filmApp.swift in Sources */,
 				6452C9E7260C12B1008530D8 /* MovieDetails.swift in Sources */,
 				6452C9DA260BD599008530D8 /* Challenge_about_film.xcdatamodeld in Sources */,

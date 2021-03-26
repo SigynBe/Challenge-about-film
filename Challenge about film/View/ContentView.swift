@@ -14,9 +14,10 @@ struct ContentView: View {
         ZStack{
             Color(.black).ignoresSafeArea()
             
-            ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/){
+            ScrollView(.vertical, showsIndicators: true){
                 VStack{
                     Image("image").resizable().frame(height: 485).ignoresSafeArea().position(x: 160,y: 220)
+                    
                 }
             }
             
