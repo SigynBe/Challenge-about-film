@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+ 
+ struct RowContent: View {
+    @State var movies: Movie
+    @State var image: UIImage = UIImage(named: "image")!
 
-struct RowContent: View {
     var body: some View {
         GeometryReader{ geo in
             ZStack{
@@ -17,19 +20,19 @@ struct RowContent: View {
                     
                     Spacer().frame(width: 20)
                     
-                    Image("image").resizable().frame(width: 80, height: 110)
+                    Image(uiImage: image).resizable().frame(width: 80, height: 110)
                     
                     Spacer().frame(width: 20)
                     
                     VStack{
-                        Text("Edward Scissorhands").foregroundColor(.white)
+                        Text("\(movies.original_title!)").foregroundColor(.white)
                         
                         HStack{
-                            Text("1990").foregroundColor(.white)
+//                            Text("\(movies.relese_data!)").foregroundColor(.white)
                             
                             Spacer().frame(width: 8)
                             
-                            Text("Drama, Fantasy").foregroundColor(.white)
+                            Text("\(movies.genreText)").foregroundColor(.white)
                             
                         }
                         
@@ -45,10 +48,4 @@ struct RowContent: View {
             }.position(x: 450, y: 240)
         }
     }
-}
-
-struct RowContent_Previews: PreviewProvider {
-    static var previews: some View {
-        RowContent().previewLayout(.sizeThatFits)
-    }
-}
+ }

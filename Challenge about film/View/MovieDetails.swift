@@ -10,14 +10,17 @@ import SwiftUI
 struct MovieDetails: View {
     @State var isPressed = false
     
+    @State var movies: Movie
+    
     var body: some View {
         ZStack{
+
             Color(.black)
                 .ignoresSafeArea()
             VStack{
                 HStack{
-                    Spacer().frame(width: 20)
-                    Text("The Very Best Of \n Johnny Depp").bold().foregroundColor(.white)
+//                    Spacer().frame(width: 20)
+                    Text(movies.original_title!).bold().foregroundColor(.white)
                     
                     Spacer()
                     
@@ -25,6 +28,7 @@ struct MovieDetails: View {
                         Button(action: {
                             isPressed = true
                             print("Edit button was tapped")
+                            
                         }){
                             Image(systemName: "heart").resizable().foregroundColor(.white).frame(width: 30, height: 30, alignment: .center)
                             Spacer().frame(width: 20)
@@ -43,7 +47,7 @@ struct MovieDetails: View {
                     }
                     
                 }
-            
+                
                 Spacer()
                     .frame(width: 20, height: 20)
                 
@@ -53,7 +57,7 @@ struct MovieDetails: View {
                     
                     Spacer().frame(width: 5)
                     
-                    Text("1.2K Likes").foregroundColor(.white)
+                    Text("\(movies.vote_count!)").foregroundColor(.white)
                     
                     Spacer().frame(width: 23)
                     
@@ -61,7 +65,7 @@ struct MovieDetails: View {
                     
                     Spacer().frame(width: 5)
                     
-                    Text("3333K views").foregroundColor(.white)
+                    Text("\(movies.popularity!)").foregroundColor(.white)
                     
                     Spacer()
                     
@@ -69,13 +73,18 @@ struct MovieDetails: View {
                 
                 
             }
+        }.onAppear{
+            MovieService().get{ movie in
+                self.movies = movie
+            }
+            
         }
         
     }
-}
 
-struct MovieDetails_Previews: PreviewProvider {
-    static var previews: some View {
-        MovieDetails().previewLayout(.sizeThatFits)
-    }
 }
+//struct MovieDetails_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MovieDetails(movies: movies[1]).previewLayout(.sizeThatFits)
+//    }
+//}
