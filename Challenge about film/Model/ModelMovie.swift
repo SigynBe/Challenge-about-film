@@ -6,12 +6,7 @@
 //
 
 import Foundation
-//struct MovieList: Codable {
-//    var page: Int
-//    var results: [Movie]
-//    var total_results: Int
-//    var total_pages: Int
-//}
+
 
 
 struct Movie: Decodable, Hashable {
@@ -30,7 +25,7 @@ struct Movie: Decodable, Hashable {
     var original_title: String?
     var popularity: Double?
     var vote_count: Int?
-    var relese_data: String?
+    var release_date: String?
     
     var genres: [MovieGenre]?
     

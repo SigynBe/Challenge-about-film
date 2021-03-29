@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @State var movies: Movie = Movie.init(id: 0,poster_path: "", original_title: "", popularity: 0, vote_count: 0, relese_data: "")
+    @State var movies: Movie = Movie.init(id: 0,poster_path: "", original_title: "", popularity: 0, vote_count: 0, release_date: "")
     @State var image: UIImage = UIImage(named: "image")!
     
     var body: some View {
@@ -18,6 +18,7 @@ struct ContentView: View {
             
             ScrollView(.vertical, showsIndicators: true){
                 VStack{
+                    
                     Image(uiImage: image).resizable().frame(alignment: .center)
                         
                     HStack{
@@ -28,9 +29,11 @@ struct ContentView: View {
                                         original_title: movies.original_title,
                                         popularity: movies.popularity,
                                         vote_count: movies.vote_count,
-                                        relese_data: movies.relese_data))
+                                        release_date: movies.release_date))
                     }
-                    CountList(movies: [.init(id: movies.id, poster_path: movies.poster_path, original_title: movies.original_title, popularity: movies.popularity, vote_count: movies.vote_count, relese_data: movies.relese_data, genres: movies.genres)])
+                    CountList(movies: [.init(id: movies.id, poster_path: movies.poster_path, original_title: movies.original_title, popularity: movies.popularity, vote_count: movies.vote_count, release_date: movies.release_date, genres: movies.genres)])
+                    
+                    Spacer()
                 }
             }.ignoresSafeArea()
             

@@ -15,7 +15,7 @@ struct CountList: View {
                 RowContent(movies: movie)
             }
         .onAppear{
-            MovieService().get{ (movie) in
+            MovieService().getMovieList{ (movie) in
                 self.movies = [movie]
                 
             }
