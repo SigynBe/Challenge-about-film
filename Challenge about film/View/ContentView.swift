@@ -19,7 +19,7 @@ struct ContentView: View {
             ScrollView(.vertical, showsIndicators: true){
                 VStack{
                     
-                    Image(uiImage: image).resizable().frame(alignment: .center)
+                    Image(uiImage: image).resizable().aspectRatio(contentMode: .fill)
                         
                     HStack{
                         Spacer().frame(width: 20)
@@ -51,8 +51,3 @@ struct ContentView: View {
     }
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
