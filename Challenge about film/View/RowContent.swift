@@ -49,12 +49,10 @@ struct RowContent: View {
                 Spacer()
             }.position(x: 450, y: 240)
         }.onAppear{
-            MovieService().getMovieList{ movie in
-                self.movies = movie
-                MovieService().getMovieImage(imageURL: self.movies.posterURL) { (moviePost) in
-                    self.image = moviePost
-                }
+            MovieService().getMovieImage(imageURL: self.movies.posterURL) { (moviePost) in
+                self.image = moviePost
             }
         }
     }
 }
+

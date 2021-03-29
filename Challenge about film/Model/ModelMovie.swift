@@ -7,7 +7,11 @@
 
 import Foundation
 
-
+struct MovieList: Decodable{
+    var page: Int
+    var results: [Movie]
+    
+}
 
 struct Movie: Decodable, Hashable {
     static func == (lhs: Movie, rhs: Movie) -> Bool {

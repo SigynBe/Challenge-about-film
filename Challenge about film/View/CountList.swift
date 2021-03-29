@@ -12,11 +12,11 @@ struct CountList: View {
     var body: some View {
        
             ForEach(movies, id: \.id){ movie in
-                RowContent(movies: movie)
+                RowContent(movies: movie).padding()
             }
         .onAppear{
             MovieService().getMovieList{ (movie) in
-                self.movies = [movie]
+                self.movies = movie.results
                 
             }
         }

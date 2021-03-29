@@ -17,7 +17,7 @@ class MovieService {
         self.session = URLSession.shared
     }
     
-    func getMovieList(completion: @escaping (Movie) -> Void) {
+    func getMovieList(completion: @escaping (MovieList) -> Void) {
 
         let request = URLRequest(url: urlMovieList)
 
@@ -36,7 +36,7 @@ class MovieService {
             }
 
             do {
-                let movies = try JSONDecoder().decode(Movie.self, from: json)
+                let movies = try JSONDecoder().decode(MovieList.self, from: json)
 
                 DispatchQueue.main.async {
                     print(movies)
