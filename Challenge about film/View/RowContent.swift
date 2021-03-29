@@ -22,15 +22,15 @@ struct RowContent: View {
                     
                     Spacer().frame(width: 20)
                     
-                    Image(uiImage: image).resizable().frame(width: 80, height: 110)
+                    Image(uiImage: image).resizable().frame(alignment: .leading).aspectRatio(contentMode: .fit)
                     
                     Spacer().frame(width: 20)
                     
                     VStack{
-                        Text("\(movies.original_title!)").foregroundColor(.white)
+                        Text("\(movies.original_title!)").foregroundColor(.white).multilineTextAlignment(.leading)
                         
                         HStack{
-                            Text("\(movies.release_date!)").foregroundColor(.white)
+                            Text("\(movies.release_date!)").foregroundColor(.white).multilineTextAlignment(.leading)
                             
                             Spacer().frame(width: 8)
                             
@@ -41,13 +41,17 @@ struct RowContent: View {
                     }
                     
                     Spacer()
+                    HStack{
+                        Spacer()
+                        Image(systemName: "checkmark.circle.fill").foregroundColor(.white)
+                        Spacer().frame(width: 5, alignment: .topTrailing)
+                    }
+                    
                 }
+                
+                
             }
             
-            HStack{
-                Image(systemName: "checkmark.circle.fill").foregroundColor(.white)
-                Spacer()
-            }.position(x: 450, y: 240)
         }.onAppear{
             MovieService().getMovieImage(imageURL: self.movies.posterURL) { (moviePost) in
                 self.image = moviePost
