@@ -26,8 +26,8 @@ struct RowContent: View {
                     
                     Spacer().frame(width: 20)
                     
-                    VStack{
-                        Text("\(movies.original_title!)").foregroundColor(.white).multilineTextAlignment(.leading)
+                    VStack(alignment: .leading){
+                        Text("\(movies.original_title!)").foregroundColor(.white)
                         
                         HStack{
                             Text("\(movies.release_date!)").foregroundColor(.white).multilineTextAlignment(.leading)
@@ -42,7 +42,7 @@ struct RowContent: View {
                     
                     Spacer()
                     HStack{
-                        Spacer()
+                        
                         Image(systemName: "checkmark.circle.fill").foregroundColor(.white)
                         Spacer().frame(width: 5, alignment: .topTrailing)
                     }
