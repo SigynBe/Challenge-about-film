@@ -12,14 +12,14 @@ pipeline {
         stage('Build and Test') {
             steps {
                 // Build your SwiftUI project using Xcode
-                sh "xcodebuild -project Challenge-about-film.xcodeproj -scheme Challenge about film clean build test"
+                sh "xcodebuild -project Challenge-about-film.xcodeproj -scheme Challenge-about-film clean build test"
             }
         }
     }
 
     post {
         success {
-            archiveArtifacts artifacts: 'build/Challenge-about-film.app', allowEmptyArchive: true
+            archiveArtifacts artifacts: '**/build/Release-iphoneos/Challenge-about-film.app', allowEmptyArchive: true
         }
     }
 }
