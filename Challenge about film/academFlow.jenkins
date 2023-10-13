@@ -1,1 +1,25 @@
-echo "Olá Jenkins"
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Check out the source code from your repository
+                scm checkout: [$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], userRemoteConfigs: [[url: 'https://github.com/SigynBe/Challenge-about-film.git']]]
+            }
+        }
+
+        stage('Build and Test') {
+            steps {
+                // Build your SwiftUI project using Xcode
+                sh "xcodebuild -project Challenge-about-film.xcodeproj -scheme Challenge about film clean build test"
+            }
+        }
+    }
+
+    post {
+        success {
+            archiveArtifacts artifacts: 'build/Challenge-about-film.app', allowEmptyArchive: true
+        }
+    }
+}
